@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kingdom Graphics Design Portfolio</title>
+    <title>Afhal Travel Agency - Explore the World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* All your existing CSS styles remain the same */
-        :root {
-            --primary: #6a0dad;
-            --primary-dark: #4a077a;
-            --secondary: #ff6b6b;
-            --dark: #333;
-            --light: #f9f9f9;
-            --gray: #777;
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --transition: all 0.3s ease;
         }
 
         html {
@@ -29,9 +29,8 @@
         }
 
         body {
-            line-height: 1.6;
-            color: var(--dark);
             background-color: var(--light);
+            color: var(--dark);
             overflow-x: hidden;
         }
 
@@ -39,101 +38,63 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
         }
 
-        section {
-            padding: 80px 0;
-        }
-
-        h1, h2, h3, h4 {
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background-color: var(--secondary);
-        }
-
-        /* Header & Navigation */
+        /* Header Styles */
         header {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
         }
 
-        .nav-container {
+        header.scrolled {
+            padding: 5px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 1.2rem 0;
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
         }
 
-        .logo span {
-            color: var(--secondary);
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
+            gap: 2.2rem;
         }
 
         .nav-links a {
@@ -141,59 +102,202 @@
             color: var(--dark);
             font-weight: 500;
             transition: var(--transition);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a i {
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         .hamburger {
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            color: var(--dark);
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1335&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
-            color: white;
             text-align: center;
+            color: white;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease;
+            z-index: 2;
         }
 
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
             font-size: 1.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 20px auto 0;
+            line-height: 1.6;
         }
 
         /* About Section */
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 60px;
         }
 
         .about-text {
             flex: 1;
         }
 
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature i {
+            background-color: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature h4 {
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
         .about-image {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            animation: float 4s ease-in-out infinite;
         }
 
         .about-image img {
@@ -207,115 +311,260 @@
             transform: scale(1.05);
         }
 
-        /* Services Section */
-        .services {
-            background-color: #f5f5f5;
+        /* Destinations Section */
+        .destinations {
+            background-color: #f8f9fa;
         }
 
-        .services-grid {
+        .destination-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .service-card {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            border-radius: 10px;
+        .destination-card {
+            background: white;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .destination-image {
+            height: 200px;
+            overflow: hidden;
             position: relative;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-image {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .project-image img {
+        .destination-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
 
-        .project-card:hover .project-image img {
+        .destination-card:hover .destination-image img {
             transform: scale(1.1);
         }
 
-        .project-info {
-            padding: 20px;
-            background-color: white;
+        .destination-flag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .destination-content {
+            padding: 25px;
+        }
+
+        .destination-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .destination-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .destination-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .testimonials .section-title h2 {
+            color: white;
+        }
+
+        .testimonials .section-title p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .testimonial-container {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 10px 40px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .testimonial-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .testimonial-container::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            min-width: 320px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: """;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: var(--accent);
+            margin-top: 5px;
         }
 
         /* Contact Section */
-        .contact {
-            background-color: #f5f5f5;
-        }
-
-        .contact-container {
+        .contact-content {
             display: flex;
-            gap: 50px;
+            gap: 60px;
         }
 
         .contact-info {
             flex: 1;
         }
 
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--secondary);
+        }
+
+        .contact-info p {
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
         .contact-form {
             flex: 1;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 500;
+            color: var(--secondary);
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px 20px;
             border: 1px solid #ddd;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1rem;
             transition: var(--transition);
         }
@@ -323,74 +572,89 @@
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
         }
 
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
         }
 
-        .contact-info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-
-        .form-status {
-            display: none;
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 5px;
-            text-align: center;
+        .file-upload-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: inline-block;
+            transition: var(--transition);
             font-weight: 500;
         }
 
-        .form-status.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+        .file-upload-btn:hover {
+            background-color: var(--primary-dark);
         }
 
-        .form-status.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .file-upload input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: var(--secondary);
             color: white;
-            padding: 50px 0 20px;
+            padding: 80px 0 30px;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-column {
             flex: 1;
-            margin-right: 30px;
-        }
-
-        .footer-column:last-child {
-            margin-right: 0;
+            min-width: 250px;
         }
 
         .footer-column h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
         }
 
         .footer-links {
@@ -398,36 +662,45 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
-            color: #bbb;
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-links a:hover {
-            color: var(--secondary);
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-links a i {
+            width: 20px;
+            text-align: center;
         }
 
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
-            text-decoration: none;
             transition: var(--transition);
+            font-size: 1.2rem;
         }
 
         .social-links a:hover {
@@ -437,225 +710,544 @@
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bbb;
             font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content, .contact-container {
+        @media (max-width: 1100px) {
+            .about-content, .contact-content {
                 flex-direction: column;
             }
             
-            .about-image, .contact-info {
-                margin-bottom: 30px;
+            .about-image {
+                order: -1;
             }
             
-            .footer-content {
-                flex-direction: column;
-            }
-            
-            .footer-column {
-                margin-right: 0;
-                margin-bottom: 30px;
+            .hero h1 {
+                font-size: 3rem;
             }
         }
 
         @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 80px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 70px);
+                height: calc(100vh - 80px);
                 background-color: white;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
-                padding-top: 50px;
+                padding-top: 60px;
                 transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             }
-
+            
             .nav-links.active {
                 left: 0;
             }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-card {
+                min-width: 280px;
+            }
         }
 
-        /* Animation for elements */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .btn {
+                padding: 12px 28px;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .footer-content {
+                gap: 40px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">Kingdom Graphics</a>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <div class="logo-img">
+                        <!-- Using a placeholder logo - replace with your actual logo -->
+                        <img src="lo.jpg" alt="AFHAL DELIGHT Logo">
+                    </div>
+                    AFHAL DELIGHT
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#destinations"><i class="fas fa-map-marked-alt"></i> Destinations</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-comments"></i> Traveller Stories</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="fade-in">Welcome to Graphic Design</h1>
-                <p class="fade-in">A creative space where ideas become visuals and imagination has no limits. Explore, learn, and express yourself through color, shape, and design. Enjoy the journey! 🎨✨</p>
-                <a href="#projects" class="btn fade-in">Get Started!</a>
-            </div>
+        <div class="hero-content">
+            <h1>Discover The World With AFHAL DELIGHT Travel</h1>
+            <p>Experience unforgettable journeys to the most beautiful destinations around the globe. Your adventure of a lifetime starts here.</p>
+            <a href="#contact" class="btn">Start Your Journey</a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about">
         <div class="container">
             <div class="section-title">
                 <h2>About Us</h2>
+                <p>Learn more about our mission, values, and the team behind Afhal Travel</p>
             </div>
             <div class="about-content">
-                <div class="about-text fade-in">
-                    <h3>We Create Designs That Make an Impact</h3>
-                    <p>Kingdom Graphics Design is a premier design studio dedicated to creating visually stunning and strategically effective designs for businesses of all sizes.</p>
-                    <p>With over 5 years of experience in the industry, our team of talented designers combines creativity with technical expertise to deliver designs that not only look beautiful but also drive results.</p>
-                    <p>We believe that great design is more than just aesthetics - it's about solving problems, communicating messages, and creating memorable experiences for your audience.</p>
-                    <a href="#contact" class="btn">Get In Touch</a>
-                </div>
-                <div class="about-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Our Design Studio">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
+                <div class="about-text">
+                    <h3>We Make Your Travel Dreams Come True</h3>
+                    <p>Afhal Travel Agency has been creating unforgettable travel experiences for over 15 years. Our team of passionate travel experts is dedicated to crafting personalized journeys that exceed your expectations.</p>
+                    <p>We believe that travel has the power to transform lives, broaden perspectives, and create lasting memories. That's why we go above and beyond to ensure every detail of your trip is perfect.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-globe-americas"></i>
+                            <div>
+                                <h4>Global Destinations</h4>
+                                <p>Access to over 100 countries worldwide</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-concierge-bell"></i>
+                            <div>
+                                <h4>Premium Service</h4>
+                                <p>24/7 customer support during your travels</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Travel Insurance</h4>
+                                <p>Comprehensive coverage for peace of mind</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <div>
+                                <h4>Best Price Guarantee</h4>
+                                <p>We match or beat any competitor's price</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Brand Identity</h3>
-                    <p>We create cohesive brand identities that communicate your values and resonate with your target audience.</p>
+                    
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Get In Touch</a>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-print"></i>
-                    </div>
-                    <h3>Print Design</h3>
-                    <p>Stunning print materials from business cards to brochures that make a lasting impression.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-pencil-alt"></i>
-                    </div>
-                    <h3>Custom Illustrations</h3>
-                    <p>Unique, handcrafted illustrations that tell your story and set you apart from the competition.</p>
-                </div>
-                 <div class="service-card fade-in">
-                    <div class="service-icon">
-                        <i class="fas fa-pencil-alt"></i>
-                    </div>
-                    <h3>CAC Registration</h3>
-                    <p>Don't just run a hustle build a registred brand</p>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Travel Team">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Destinations Section -->
+    <section class="destinations" id="destinations">
         <div class="container">
             <div class="section-title">
-                <h2>Our Projects</h2>
+                <h2>Popular Destinations</h2>
+                <p>Explore our most sought-after travel destinations around the world</p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="data:image/jpeg;base64,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" alt="Brand Identity Project">
+            <div class="destination-grid">
+                <!-- Saudi Arabia -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1541336032412-2048a678540d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Mecca">
+                        <img src="https://flagcdn.com/w320/sa.png" class="destination-flag" alt="Saudi Arabia Flag">
                     </div>
-                    <div class="project-info">
-                        <h3>EcoLife Brand Identity</h3>
-                        <p>Complete brand identity for an eco-friendly product line, including logo, packaging, and marketing materials.</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJqKjv7DLd5lhkBxUiE6vzrCBjuzM3Nnr9_g&s" alt="Brand Identity Project">
-                    </div>
-                    <div class="project-info">
-                        <h3>Solutions Designs</h3>
-                        <p>Responsive corporate design for a technology consulting firm.</p>
+                    <div class="destination-content">
+                        <h3>Mecca, Saudi Arabia</h3>
+                        <p>Experience spiritual journey in the holiest city of Islam, home to the magnificent Masjid al-Haram and Kaaba.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,899</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Mobile App Design">
+
+                <!-- Qatar -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1586768045025-87a5bc5fd0c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Doha">
+                        <img src="https://flagcdn.com/w320/qa.png" class="destination-flag" alt="Qatar Flag">
                     </div>
-                    <div class="project-info">
-                        <h3>FitTrack Design</h3>
-                        <p>Design for a fitness tracking application with intuitive navigation and engaging visuals.</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Print Design Project">
-                    </div>
-                    <div class="project-info">
-                        <h3>Luxe Restaurant Menu</h3>
-                        <p>Elegant menu design for a high-end restaurant, featuring custom illustrations and premium materials.</p>
+                    <div class="destination-content">
+                        <h3>Doha, Qatar</h3>
+                        <p>Discover modern architecture, traditional souqs, and cultural treasures in this Arabian Gulf metropolis.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,699</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Packaging Design">
+
+                <!-- Kuwait -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1621569041317-48e4f9b67d8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Kuwait City">
+                        <img src="https://flagcdn.com/w320/kw.png" class="destination-flag" alt="Kuwait Flag">
                     </div>
-                    <div class="project-info">
-                        <h3>Artisan Coffee Packaging</h3>
-                        <p>Vibrant packaging design for a specialty coffee brand that stands out on crowded shelves.</p>
+                    <div class="destination-content">
+                        <h3>Kuwait City, Kuwait</h3>
+                        <p>Explore the Kuwait Towers, traditional markets, and modern waterfront developments in this Gulf nation.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,599</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Social Media Campaign">
+
+                <!-- Egypt -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Cairo">
+                        <img src="https://flagcdn.com/w320/eg.png" class="destination-flag" alt="Egypt Flag">
                     </div>
-                    <div class="project-info">
-                        <h3>Summer Campaign Graphics</h3>
-                        <p>Complete set of social media graphics and digital ads for a seasonal marketing campaign.</p>
+                    <div class="destination-content">
+                        <h3>Cairo, Egypt</h3>
+                        <p>Step back in time to explore ancient pyramids, majestic temples, and the mysteries of the Pharaohs.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,399</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Türkiye -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" alt="Istanbul">
+                        <img src="https://flagcdn.com/w320/tr.png" class="destination-flag" alt="Turkey Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Istanbul, Türkiye</h3>
+                        <p>Where East meets West - explore magnificent mosques, bazaars, and rich history spanning two continents.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,299</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oman -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1598966737176-04b4650c754b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1176&q=80" alt="Muscat">
+                        <img src="https://flagcdn.com/w320/om.png" class="destination-flag" alt="Oman Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Muscat, Oman</h3>
+                        <p>Discover stunning fjords, ancient forts, and traditional Arabian culture in this beautiful Gulf nation.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,799</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Italy -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1096&q=80" alt="Rome">
+                        <img src="https://flagcdn.com/w320/it.png" class="destination-flag" alt="Italy Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Rome, Italy</h3>
+                        <p>Walk through history in the Eternal City with ancient ruins, Renaissance art, and delicious Italian cuisine.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,699</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Belgium -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1584464457380-9c7c8b6b1c8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Brussels">
+                        <img src="https://flagcdn.com/w320/be.png" class="destination-flag" alt="Belgium Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Brussels, Belgium</h3>
+                        <p>Enjoy medieval architecture, world-famous chocolates, and the heart of European politics and culture.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,499</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sweden -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1598880940083-de5a1e049938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Stockholm">
+                        <img src="https://flagcdn.com/w320/se.png" class="destination-flag" alt="Sweden Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Stockholm, Sweden</h3>
+                        <p>Explore the beautiful archipelago city with its historic old town, modern design, and Nordic charm.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,899</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- United Kingdom -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="London">
+                        <img src="https://flagcdn.com/w320/gb.png" class="destination-flag" alt="UK Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>London, UK</h3>
+                        <p>Explore royal palaces, world-class museums, and historic landmarks in this vibrant European capital.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,699</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spain -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Barcelona">
+                        <img src="https://flagcdn.com/w320/es.png" class="destination-flag" alt="Spain Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Barcelona, Spain</h3>
+                        <p>Explore Gaudi's architectural wonders, vibrant markets, and beautiful Mediterranean beaches.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,499</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canada -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1543349689-9a4d426bee8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1101&q=80" alt="Toronto">
+                        <img src="https://flagcdn.com/w320/ca.png" class="destination-flag" alt="Canada Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Toronto, Canada</h3>
+                        <p>Experience multicultural diversity, the CN Tower, and beautiful lakefront views in this Canadian metropolis.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,599</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Switzerland -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Swiss Alps">
+                        <img src="https://flagcdn.com/w320/ch.png" class="destination-flag" alt="Switzerland Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Swiss Alps, Switzerland</h3>
+                        <p>Marvel at breathtaking mountain scenery, pristine lakes, and charming villages in the heart of Europe.</p>
+                        <div class="destination-price">
+                            <span class="price">$2,199</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- France -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Paris">
+                        <img src="https://flagcdn.com/w320/fr.png" class="destination-flag" alt="France Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Paris, France</h3>
+                        <p>Discover the city of love with its iconic landmarks, world-class cuisine, and unparalleled artistic heritage.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,799</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Germany -->
+                <div class="destination-card">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Berlin">
+                        <img src="https://flagcdn.com/w320/de.png" class="destination-flag" alt="Germany Flag">
+                    </div>
+                    <div class="destination-content">
+                        <h3>Berlin, Germany</h3>
+                        <p>Explore historic landmarks, vibrant art scene, and cutting-edge architecture in Germany's dynamic capital.</p>
+                        <div class="destination-price">
+                            <span class="price">$1,599</span>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveller Stories</h2>
+                <p>See what our customers have to say about their experiences with Afhal Travel</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Our trip to Bali was absolutely magical! Afhal Travel took care of every detail, from flights to accommodations and activities. We couldn't have asked for a better experience."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Bali, Indonesia</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The European tour organized by Afhal Travel was exceptional. Their attention to detail and local knowledge made our trip stress-free and incredibly enjoyable. Highly recommended!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Michael Brown">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Brown</h4>
+                            <p>European Tour</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Afhal Travel helped us plan our dream honeymoon to the Maldives. Everything was perfect - from the private villa to the romantic dinners on the beach. Thank you for making our special trip unforgettable!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jennifer Lee">
+                        </div>
+                        <div class="author-info">
+                            <h4>Jennifer Lee</h4>
+                            <p>Maldives Honeymoon</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "As a solo traveler, safety is my top priority. Afhal Travel provided excellent guidance and support throughout my Japan trip. I felt secure and well taken care of at all times."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Chen</h4>
+                            <p>Japan Adventure</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -663,81 +1255,121 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Get In Touch</h2>
+                <h2>Contact Us</h2>
+                <p>Get in touch with us to start planning your next adventure</p>
             </div>
-            <div class="contact-container">
-                <div class="contact-info fade-in">
-                    <h3>Let's Create Something Amazing Together</h3>
-                    <p>Ready to take your brand to the next level? Contact us today to discuss your project and get a free consultation.</p>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Start Your Journey</h3>
+                    <p>Fill out the form and our travel experts will get back to you within 24 hours to discuss your dream vacation.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Office</h4>
+                                <p>Zara Plaza yahya Gusau road shop no.123<br> Kano state nigeria, Adventure City</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4>Our Location</h4>
-                            <p>Sharada Phase 1, Bayan Salanta Shop Number 123</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
+                        <div class="contact-item">
                             <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+234 8062361138</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4>Phone Number</h4>
-                            <p>+234 9020588266</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
+                        <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email Address</h4>
-                            <p>KingdomGraphics@gmail.com</p>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>Musamusakabir7@gmail.com</p>
+                            </div>
                         </div>
                     </div>
-                    
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-behance"></i></a>
                     </div>
                 </div>
-                
-                <div class="contact-form fade-in">
-                    <!-- REPLACE THE FORM ACTION URL WITH YOUR FORMSPREE URL -->
-                    <form id="contactForm" action="https://formspree.io/f/xqaoddoo" method="POST">
+                <div class="contact-form">
+                    <form action="https://formsubmit.co/musamkabir47@gmail.com" method="POST" enctype="multipart/form-data" id="travelForm">
+                        <input type="hidden" name="_subject" value="NEW TRAVEL APPLICATION - AFHAL DELIGHT">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_autoresponse" value="Thank you for your travel application to AFHAL DELIGHT! We have received your documents and will contact you within 24 hours to discuss your dream vacation.">
+                        
                         <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="name" class="form-control" placeholder="Enter your full name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Your Email *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Your Message *</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
+                            <label for="address">Full Address</label>
+                            <textarea id="address" name="address" class="form-control" rows="3" placeholder="Enter your full address" required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn">Send Message</button>
+                        <div class="form-group">
+                            <label>Upload International Passport</label>
+                            <div class="file-upload">
+                                <div class="file-upload-btn">Choose File</div>
+                                <input type="file" id="passport" name="passport" accept=".jpg,.jpeg,.png,.pdf" required>
+                            </div>
+                            <small id="passportFileName">No file chosen</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Upload Passport Photography</label>
+                            <div class="file-upload">
+                                <div class="file-upload-btn">Choose File</div>
+                                <input type="file" id="passportPhoto" name="passport_photo" accept=".jpg,.jpeg,.png" required>
+                            </div>
+                            <small id="photoFileName">No file chosen</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="destination">Preferred Destination</label>
+                            <select id="destination" name="destination" class="form-control" required>
+                                <option value="" disabled selected>Select a destination</option>
+                                <option value="Mecca, Saudi Arabia">Mecca, Saudi Arabia</option>
+                                <option value="Doha, Qatar">Doha, Qatar</option>
+                                <option value="Kuwait City, Kuwait">Kuwait City, Kuwait</option>
+                                <option value="Cairo, Egypt">Cairo, Egypt</option>
+                                <option value="Istanbul, Türkiye">Istanbul, Türkiye</option>
+                                <option value="Muscat, Oman">Muscat, Oman</option>
+                                <option value="Rome, Italy">Rome, Italy</option>
+                                <option value="Brussels, Belgium">Brussels, Belgium</option>
+                                <option value="Stockholm, Sweden">Stockholm, Sweden</option>
+                                <option value="London, UK">London, UK</option>
+                                <option value="Barcelona, Spain">Barcelona, Spain</option>
+                                <option value="Toronto, Canada">Toronto, Canada</option>
+                                <option value="Swiss Alps, Switzerland">Swiss Alps, Switzerland</option>
+                                <option value="Paris, France">Paris, France</option>
+                                <option value="Berlin, Germany">Berlin, Germany</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="Tell us about your travel preferences..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Submit Application</button>
                     </form>
-                    <div id="form-status" class="form-status"></div>
                 </div>
             </div>
         </div>
@@ -748,8 +1380,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Kingdom Graphics</h3>
-                    <p>Creating exceptional visual experiences that elevate brands and captivate audiences.</p>
+                    <h3>AFHAL DELIGHT Travel</h3>
+                    <p>Creating unforgettable travel experiences since 2008. Your journey of a lifetime starts with us.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -757,138 +1389,125 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#destinations"><i class="fas fa-chevron-right"></i> Destinations</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Traveller Stories</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-column">
-                    <h3>Our Services</h3>
+                    <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Brand Identity</a></li>
-                        <li><a href="#">CAC</a></li>
-                        <li><a href="#">Graphic Design</a></li>
-                        <li><a href="#">Print Design</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i>Zara Plaza yahya Gusau road shop no.123<br> Kano state nigeria, Adventure City</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Abuja state nigeria, Adventure City</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +234 8062361138</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i>Musamusakabir7@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</a></li>
                     </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for design tips and updates.</p>
-                    <form class="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
                 </div>
             </div>
-            
             <div class="copyright">
-                <p>&copy; 2023 Kingdom Graphics Design. All Rights Reserved.</p>
+                <p>&copy; 2023 Afhal Travel Agency. All Rights Reserved. <i class="fas fa-heart" style="color: var(--accent);"></i> for travelers</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Mobile Menu Toggle
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
-        
+        const header = document.getElementById('header');
+
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
-        
+
         // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
-        
-        // Scroll effect for header
+
+        // Header scroll effect
         window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.padding = '10px 0';
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.classList.add('scrolled');
             } else {
-                header.style.padding = '20px 0';
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.classList.remove('scrolled');
             }
         });
+
+        // File Upload Display
+        const passportInput = document.getElementById('passport');
+        const passportFileName = document.getElementById('passportFileName');
         
-        // Fade-in animation on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
+        const photoInput = document.getElementById('passportPhoto');
+        const photoFileName = document.getElementById('photoFileName');
+
+        passportInput.addEventListener('change', function() {
+            if(this.files && this.files[0]) {
+                passportFileName.textContent = this.files[0].name;
+            } else {
+                passportFileName.textContent = 'No file chosen';
+            }
+        });
+
+        photoInput.addEventListener('change', function() {
+            if(this.files && this.files[0]) {
+                photoFileName.textContent = this.files[0].name;
+            } else {
+                photoFileName.textContent = 'No file chosen';
+            }
+        });
+
+        // Form Submission with FormSubmit
+        document.getElementById('travelForm').addEventListener('submit', function(e) {
+            // Simple validation
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const passport = document.getElementById('passport').files[0];
+            const passportPhoto = document.getElementById('passportPhoto').files[0];
+            const destination = document.getElementById('destination').value;
+            
+            if(!fullName || !email || !phone || !address || !passport || !passportPhoto || !destination) {
+                alert('Please fill in all required fields.');
+                e.preventDefault();
+                return;
+            }
+            
+            // Show loading message
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.disabled = true;
+            
+            // FormSubmit will handle the rest automatically
+            console.log('Form submitted to FormSubmit');
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.animation = `fadeIn 1s ease forwards`;
                 }
             });
-        };
-        
-        window.addEventListener('scroll', fadeInOnScroll);
-        // Initial check in case elements are already in view
-        fadeInOnScroll();
-        
-        // Form submission with Formspree
-        const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('form-status');
-        
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            formStatus.style.display = 'none';
-            
-            try {
-                const formData = new FormData(contactForm);
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    formStatus.className = 'form-status success';
-                    formStatus.textContent = 'Thank you! Your message has been sent successfully. We will get back to you soon.';
-                    formStatus.style.display = 'block';
-                    contactForm.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                formStatus.className = 'form-status error';
-                formStatus.textContent = 'Sorry, there was a problem sending your message. Please email us directly at musamusakabir7@gmail.com';
-                formStatus.style.display = 'block';
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                
-                // Hide status message after 5 seconds
-                setTimeout(() => {
-                    formStatus.style.display = 'none';
-                }, 8000);
-            }
+        }, observerOptions);
+
+        document.querySelectorAll('.about-content, .destination-card, .testimonial-card, .contact-content').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
